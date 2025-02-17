@@ -1,5 +1,8 @@
 import { GoogleGenerativeAI } from "https://cdn.jsdelivr.net/npm/@google/generative-ai@0.1.3/+esm";
-import GEMINI_API_KEY from './config.js';
+import encodedKey from './config.js';
+
+// Decode the key when needed
+const GEMINI_API_KEY = atob(encodedKey);
 
 // Add timeout and retry logic for API calls
 async function fetchWithTimeout(promise, timeout = 10000) {
