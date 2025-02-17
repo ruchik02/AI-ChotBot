@@ -185,3 +185,106 @@ button:active {
         height: calc(100vh - 140px);
     }
 }
+
+/* Add these styles to your existing CSS */
+.typing-indicator {
+    display: flex;
+    gap: 4px;
+    padding: 4px 8px;
+}
+
+.typing-indicator span {
+    width: 8px;
+    height: 8px;
+    background-color: #764ba2;
+    border-radius: 50%;
+    animation: bounce 1.3s linear infinite;
+}
+
+.typing-indicator span:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.typing-indicator span:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+@keyframes bounce {
+    0%, 60%, 100% {
+        transform: translateY(0);
+    }
+    30% {
+        transform: translateY(-4px);
+    }
+}
+
+/* Emoji Picker Styles */
+.emoji-picker {
+    position: absolute;
+    bottom: 70px;
+    right: 70px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    padding: 12px;
+    z-index: 1000;
+    border: 1px solid rgba(0,0,0,0.1);
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+.emoji-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+    padding: 4px;
+}
+
+.emoji-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    border: none;
+    background: transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    padding: 0;
+}
+
+.emoji-btn:hover {
+    background: #f0f0f0;
+    transform: scale(1.1);
+}
+
+.emoji-btn:active {
+    transform: scale(0.95);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .emoji-picker {
+        bottom: 80px;
+        right: 10px;
+        max-width: 280px;
+    }
+    
+    .emoji-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+    }
+}

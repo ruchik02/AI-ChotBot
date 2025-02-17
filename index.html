@@ -7,7 +7,7 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@google/generative-ai@0.1.3/+esm"></script>
 </head>
 <body>
     <div class="container">
@@ -42,7 +42,7 @@
                 <label for="fileInput" class="input-action-btn">
                     <i class="fas fa-paperclip"></i>
                 </label>
-                <input type="file" id="fileInput" hidden>
+                <input type="file" id="fileInput" accept="image/*" hidden>
                 <button id="sendButton">
                     <i class="fas fa-paper-plane"></i>
                 </button>
@@ -50,6 +50,6 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
 </html>
